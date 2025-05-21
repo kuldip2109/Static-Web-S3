@@ -2,49 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
+
     header {
-      background: #007bff;
+      background: linear-gradient(135deg, #007bff, #00c4ff);
       color: white;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 1.5rem;
+    }
+
     nav a {
-      margin: 0 15px;
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      margin: 0 20px;
+      transition: color 0.3s ease;
     }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
     section {
-      padding: 2rem 1rem;
-      max-width: 800px;
+      padding: 3rem 1rem;
+      max-width: 900px;
       margin: auto;
     }
+
     h2 {
-      border-bottom: 2px solid #007bff;
+      font-size: 2rem;
+      color: #007bff;
+      border-bottom: 3px solid #007bff;
       padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
+
+    #about p {
+      font-size: 1.1rem;
+      color: #555;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    #projects ul {
+      list-style: none;
+    }
+
+    #projects li {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #projects li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #projects li strong {
+      color: #007bff;
+      font-size: 1.2rem;
+    }
+
+    #contact p {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    #contact a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    #contact a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
     footer {
-      background: #333;
+      background: #222;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      #about p, #projects li, #contact p {
+        font-size: 1rem;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
     <h1>Kuldip Rathod</h1>
-    <p> DevOps Engineer | Cloud Enthusiast</p>
+    <p>DevOps Engineer | Cloud Enthusiast</p>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -54,37 +168,36 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>A qulified and professional cloud certified and devops engineer with Knowledge of Linux, Version
-        Control tool, Configuration Management Tool, Docker and Nagios. Proficient in Jenkins and AWS
-        code-deploy.</p>
+    <p>A qualified and professional cloud-certified DevOps engineer with expertise in Linux, Version Control tools, Configuration Management tools, Docker, and Nagios. Proficient in Jenkins and AWS CodeDeploy.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Jenkins CICD with GitHub Integration in AWS.</strong> - Implemented Jenkins CI/CD pipeline integrated with GitHub on AWS, enhancing software
-        deployment efficiency Using GitHub webhooks for automated packaging , showcasing strong
-        DevOps proficiency.</li><br><br><br>
-      <li><strong>WEB-APP HOSTING USING NGINX</strong> - Ewe aim to deploy a Django-based notes application using Nginx as a reverse proxy on an
-        AWS EC2 instance. We will install Nginx on the EC2 instance, configure it to serve the Django
-        application by routing requests from the public domain to the local server running the
-        application.</li><br><br><br>
-        <li><strong>CHAT WEB-APP Using React(Socket.io).</strong> - A web application built using React that incorporates Socket.IO for real-time communication
-            and collaboration among users. A chat web app leveraging React for dynamic user interfaces
-            and Socket.IO for real-time messaging, seamless communication and collaboration among
-            users.</li>
+      <li>
+        <strong>Jenkins CI/CD with GitHub Integration in AWS</strong><br>
+        Implemented a Jenkins CI/CD pipeline integrated with GitHub on AWS, enhancing software deployment efficiency using GitHub webhooks for automated packaging, showcasing strong DevOps proficiency.
+      </li>
+      <li>
+        <strong>Web-App Hosting Using Nginx</strong><br>
+        Deployed a Django-based notes application using Nginx as a reverse proxy on an AWS EC2 instance. Configured Nginx to serve the Django application by routing requests from the public domain to the local server.
+      </li>
+      <li>
+        <strong>Chat Web-App Using React (Socket.IO)</strong><br>
+        Developed a web application using React and Socket.IO for real-time communication and collaboration. Leveraged React for dynamic user interfaces and Socket.IO for seamless real-time messaging.
+      </li>
     </ul>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: kuldiprathod2109@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">https://github.com/kuldip2109</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/kuldip2109</a></p>
+    <p>GitHub: <a href="https://github.com/kuldip2109" target="_blank">github.com/kuldip2109</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/kuldip2109" target="_blank">linkedin.com/in/kuldip2109</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>© 2025 Kuldip Rathod. All rights reserved.</p>
   </footer>
 
 </body>
